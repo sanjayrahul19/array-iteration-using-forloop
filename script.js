@@ -120,8 +120,11 @@ const median = (a, b) => {
   let concat = a.concat(b);
   let sort = concat.sort((a, b) => a - b);
   const half = Math.floor(sort.length / 2); //2
-  if (sort.length % 2) return sort[half]; //2-3
-  return (sort[half] + sort[half - 1]) / 2;
+  if (sort.length % 2) {
+    return sort[half];
+  } else {
+    return (sort[half] + sort[half - 1]) / 2;
+  }
 };
 
 console.log(median([1, 3], [2, 4]));
